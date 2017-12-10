@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ps.aurestaurant.RestaurantActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/imageSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@+id/toolbar">
+
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageSlider"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/reviewBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:contentDescription="@string/review"
+            android:drawableTop="@drawable/ic_rate_review_black_24dp"
+            android:elevation="0dp"
+            android:text="Write Review"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/menuBtn"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:drawableTop="@drawable/ic_restaurant_menu_black_24dp"
+            android:text="Menu"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/mapBtn"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:drawableTop="@drawable/ic_navigation_black_24dp"
+            android:text="Direction"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/callBtn"
+            android:layout_width="95dp"
+            android:layout_height="65dp"
+            android:drawableTop="@drawable/ic_phone_black_24dp"
+            android:text="Call"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/resRating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3.5"
+        android:stepSize="0.5" />
+
+    <TextView
+        android:id="@+id/resCate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/resRating"
+        android:layout_below="@+id/resRating"
+        android:layout_marginTop="12dp"
+        android:text="Thai Food" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/resRating"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/resRating"
+        android:text="(3.7)" />
+
+    <TextView
+        android:id="@+id/separate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/resCate"
+        android:layout_alignBottom="@+id/resCate"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/resCate"
+        android:text="·" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/separate"
+        android:layout_alignBottom="@+id/separate"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/separate"
+        android:text="9:00 - 17:00" />
+
+
+
+    <ListView
+        android:id="@+id/reviewList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/resCate"
+        android:layout_marginTop="17dp" />
+
+
+</RelativeLayout>
