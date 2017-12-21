@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.navigation_map -> {
                 val fragment2 = FragmentTwo()
                 val fragmentTransaction2 = supportFragmentManager.beginTransaction()
-                fragmentTransaction2.replace(R.id.fram, fragment2, "FragmentTwo")  //create first framelayout with id fram in the activity where fragments will be displayed
+                fragmentTransaction2.replace(R.id.fram, fragment2, "FragmentTwo")
                 fragmentTransaction2.commit()
                 return@OnNavigationItemSelectedListener true
             }
@@ -65,11 +65,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
+        nav_view.bringToFront()
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        //menuInflater.inflate(R.menu.navigation_drawer, menu) //setting
         menuInflater.inflate(R.menu.menu_item, menu)
         val item = menu!!.findItem(R.id.action_add)
         return true
@@ -98,10 +98,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.nav_profile -> {
+
             }
+            R.id.nav_logout -> {
+
+            }
+            R.id.nav_restaurant -> {
+
+            }
+            R.id.nav_dessert -> {
+
+            }
+            R.id.nav_cafe -> {
+
+            }
+            R.id.nav_bar -> {
+
+            }
+
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true

@@ -4,34 +4,37 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="My Profile" />
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Log out" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Categories">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_restaurant"
+                android:icon="@drawable/ic_restaurant_black_24dp"
+                android:title="Restaurants" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_dessert"
+                android:icon="@drawable/ic_cake_black_24dp"
+                android:title="Desserts" />
+            <item
+                android:id="@+id/nav_cafe"
+                android:icon="@drawable/ic_local_cafe_black_24dp"
+                android:title="Cafés" />
+            <item
+                android:id="@+id/nav_bar"
+                android:icon="@drawable/ic_local_bar_black_24dp"
+                android:title="Bars" />
         </menu>
     </item>
 
