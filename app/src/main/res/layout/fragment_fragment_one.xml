@@ -13,23 +13,22 @@
 
         <com.arlib.floatingsearchview.FloatingSearchView
             android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:floatingSearch_searchHint="Search..."
-            app:floatingSearch_suggestionsListAnimDuration="250"
-            app:floatingSearch_showSearchKey="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:floatingSearch_close_search_on_keyboard_dismiss="true"
             app:floatingSearch_leftActionMode="showSearch"
-            app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
+            app:floatingSearch_searchHint="Search..."
+            app:floatingSearch_showSearchKey="false"
+            app:floatingSearch_suggestionsListAnimDuration="250" />
 
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="384dp"
-            android:layout_height="500dp"
+            android:layout_height="395dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_margin="0dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="56dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +40,11 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10dp" />
         </LinearLayout>
 
 

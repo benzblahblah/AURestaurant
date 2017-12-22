@@ -8,12 +8,10 @@
 
     <ImageView
         android:id="@+id/resImage"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_margin="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_weight="1"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         app:srcCompat="@drawable/pizza" />
 
     <LinearLayout
@@ -24,7 +22,7 @@
 
         <LinearLayout
             android:layout_width="158dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -32,17 +30,22 @@
                 android:id="@+id/resName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif"
                 android:text="Pizza Company"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
 
             <TextView
                 android:id="@+id/resType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Italian"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!--<RatingBar-->
