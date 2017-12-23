@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_add"
-        android:icon="@drawable/ic_add_black_24dp"
-        android:title="@string/add"
+        android:id="@+id/action_review"
+        android:icon="@drawable/ic_rate_review_black_24dp"
+        android:title="Review"
         android:iconTint="@color/background"
         app:showAsAction="always" />
 

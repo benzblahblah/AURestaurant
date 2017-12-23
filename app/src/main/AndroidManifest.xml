@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true"/>
@@ -22,21 +25,23 @@
 
         </activity>
         <activity android:name=".AddRestaurantActivity" />
-        <activity android:name=".RestaurantActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".CommentActivity" />
-        <activity android:name=".Splash" >
+        <activity android:name=".RestaurantActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".Splash" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-        <!--<activity-->
-            <!--android:name=".NavigationDrawerActivity"-->
-            <!--android:label="@string/title_activity_navigation_drawer"-->
-            <!--android:theme="@style/AppTheme"></activity>-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
 
         <meta-data
             android:name="com.google.android.gms.version"

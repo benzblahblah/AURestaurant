@@ -5,14 +5,18 @@ import android.location.Location
  */
 class Restaurant {
     var name:String? = null
+    var type:String? = null
     var description:String? = null
+    var tel:String? = null
     var image: Int? = null
     var location:Location? = null
 
 
-    constructor(name: String?, description: String?, image: Int?, latitude: Double?, longitude:Double?) {
+    constructor(name: String?, type: String?, description: String?, tel: String?, image: Int?, latitude: Double?, longitude:Double?) {
         this.name = name
+        this.type = type
         this.description = description
+        this.tel = tel
         this.image = image
         this.location = Location(name)
         this.location!!.latitude = latitude!!

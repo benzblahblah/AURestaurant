@@ -32,8 +32,8 @@ class FragmentOne : Fragment() {
     }
 
     fun testRestaurant(){
-        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "In the galaxy far far away...", R.drawable.noodle, 13.609934, 100.834303))
-        restaurantList.add(Restaurant("S&P", "Simply Delicious", R.drawable.sp ,13.612361, 100.837798))
+        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "Thai","In the galaxy far far away...", "", R.drawable.noodle, 13.609934, 100.834303))
+        restaurantList.add(Restaurant("S&P", "Fusion", "Simply Delicious", "", R.drawable.sp ,13.612361, 100.837798))
 
         var adapter = RestaurantAdapter(this.context, restaurantList)
         listView.adapter = adapter
@@ -54,7 +54,7 @@ class FragmentOne : Fragment() {
 
                 var view = inflater.inflate(R.layout.cell_home, null)
                 view.resName.text = currentRes.name
-                view.resType.text = currentRes.description
+                view.resType.text = currentRes.type
                 view.resImage.setImageResource(currentRes.image!!)
                 return view
 

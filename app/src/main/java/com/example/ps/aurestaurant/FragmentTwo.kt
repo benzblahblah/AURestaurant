@@ -68,8 +68,8 @@ class FragmentTwo : Fragment(), OnMapReadyCallback {
 
     var restaurantList = ArrayList<Restaurant>()
     fun testRestaurant(){
-        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "In the galaxy far far away...",0, 13.609934, 100.834303))
-        restaurantList.add(Restaurant("S&P", "Simply Delicious", 0,13.612361, 100.837798))
+        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "Thai","In the galaxy far far away...", "", R.drawable.noodle, 13.609934, 100.834303))
+        restaurantList.add(Restaurant("S&P", "Fusion", "Simply Delicious", "", R.drawable.sp ,13.612361, 100.837798))
     }
 
 

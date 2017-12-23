@@ -14,36 +14,30 @@
         android:background="@color/colorPrimary" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/imageSlider"
+        android:id="@+id/pager"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        />
 
-
-    </android.support.v4.view.ViewPager>
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="200dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageSlider"
+        android:layout_below="@+id/pager"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:id="@+id/linearLayout">
 
-        <Button
-            android:id="@+id/reviewBtn"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="95dp"
-            android:layout_height="65dp"
-            android:contentDescription="@string/review"
-            android:drawableTop="@drawable/ic_rate_review_black_24dp"
-            android:elevation="0dp"
-            android:text="Write Review"
-            android:textSize="10sp" />
 
         <Button
             android:id="@+id/menuBtn"
-            android:layout_width="95dp"
+            android:layout_width="125dp"
             android:layout_height="65dp"
             android:drawableTop="@drawable/ic_restaurant_menu_black_24dp"
             android:text="Menu"
@@ -51,7 +45,7 @@
 
         <Button
             android:id="@+id/mapBtn"
-            android:layout_width="95dp"
+            android:layout_width="125dp"
             android:layout_height="65dp"
             android:drawableTop="@drawable/ic_navigation_black_24dp"
             android:text="Direction"
@@ -59,7 +53,7 @@
 
         <Button
             android:id="@+id/callBtn"
-            android:layout_width="95dp"
+            android:layout_width="125dp"
             android:layout_height="65dp"
             android:drawableTop="@drawable/ic_phone_black_24dp"
             android:text="Call"
@@ -84,7 +78,7 @@
 
     <TextView
         android:id="@+id/resCate"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/resRating"
         android:layout_below="@+id/resRating"
@@ -100,25 +94,8 @@
         android:layout_toEndOf="@+id/resRating"
         android:text="(3.7)" />
 
-    <TextView
-        android:id="@+id/separate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/resCate"
-        android:layout_alignBottom="@+id/resCate"
-        android:layout_marginStart="13dp"
-        android:layout_toEndOf="@+id/resCate"
-        android:text="·" />
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/separate"
-        android:layout_alignBottom="@+id/separate"
-        android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/separate"
-        android:text="9:00 - 17:00" />
+
 
 
 

@@ -23,8 +23,18 @@
         android:layout_marginTop="29dp"
         android:text="Rate This Restaurant"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/showRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/editText"
+        android:layout_marginTop="33dp"
+        android:text="(0.0)"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -34,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
         android:numStars="5"
-        android:rating="4" />
+        android:rating="0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -52,12 +62,12 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="-100dp"
         android:ems="10"
         android:hint="Comment goes here..."
         android:inputType="textMultiLine"
@@ -68,12 +78,14 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="40dp"
-        android:text="Submit" />
+        android:layout_marginTop="60dp"
+        android:text="Submit"
+        android:textAlignment="center" />
 
 
 </RelativeLayout>
