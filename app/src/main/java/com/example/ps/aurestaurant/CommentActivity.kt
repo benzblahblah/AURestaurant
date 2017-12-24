@@ -26,7 +26,7 @@ class CommentActivity : AppCompatActivity() {
         this.getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         this.getSupportActionBar()!!.setHomeAsUpIndicator(R.drawable.ic_close_black_24dp)
 
-        //show เลขจาก rating bar เฉยๆ
+        //show ตัวเลขจาก rating bar
         ratingBar.onRatingBarChangeListener = RatingBar.OnRatingBarChangeListener{
             ratingBar, rating, fromUser -> showRate.text = "$rating"
 

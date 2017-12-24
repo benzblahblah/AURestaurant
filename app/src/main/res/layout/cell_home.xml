@@ -64,6 +64,9 @@
             android:layout_height="wrap_content"
             android:isIndicator="true"
             android:numStars="5"
+            android:progressTint="#F3CD28"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#FFFFFF"
             android:rating="3.5"
             android:stepSize="0.1" />
     </LinearLayout>

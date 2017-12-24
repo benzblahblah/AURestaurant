@@ -6,33 +6,33 @@ import android.graphics.Color
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.Toolbar
-import android.telephony.PhoneStateListener
-import android.telephony.TelephonyManager
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
+import android.view.*
+import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_restaurant.*
+import kotlinx.android.synthetic.main.cell_restaurant.view.*
 import me.relex.circleindicator.CircleIndicator
 import java.util.*
 
 class RestaurantActivity : AppCompatActivity() {
 
     private var mPager: ViewPager? = null
-    private var resImages = arrayOf<Int>(R.drawable.a, R.drawable.b, R.drawable.c)
+    private var resImages = arrayOf<Int>(R.drawable.pizza, R.drawable.noodle, R.drawable.sp)
     private var imgList = ArrayList<Int>()
+    var commentList = ArrayList<Comment>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant)
 
+        val extras = intent.extras
+        var name = extras.getString("name")
+
+
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        toolbar.setTitle("Restaurant Name Here")
+        toolbar.setTitle("$name")
         toolbar.setTitleTextColor(Color.WHITE)
         setSupportActionBar(toolbar)
 
@@ -40,12 +40,23 @@ class RestaurantActivity : AppCompatActivity() {
         this.getSupportActionBar()!!.setDisplayShowHomeEnabled(true)
 
         init()
+        btnAction()
+        testComment()
 
+    }
+
+    fun btnAction(){
+        val restaurantname = "Passed Restaurant Name"
+        menuBtn.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            intent.putExtra("name", restaurantname)
+            startActivity(intent)
+        }
 
         //ปุ่ม direction เปิิด google maps ให้จาก latlong
         mapBtn.setOnClickListener {
             //var url = "https://www.google.com/maps/dir/?api=1&destination=" + latLng.latitude + "," + latLng.longitude + "&travelmode=driving"
-            var url = "https://www.google.com/maps/dir/?api=1&destination=" + "13.612361,100.837798" + "&travelmode=driving"
+            var url = "https://www.google.com/maps/dir/?api=1&destination=" + "13.612361,100.837798" + "&travelmode=driving" // <--- ใส่ latlong ตรงกลาง
             var intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
 
@@ -53,7 +64,7 @@ class RestaurantActivity : AppCompatActivity() {
 
         //ปุ่ม call
         callBtn.setOnClickListener {
-            val number = "7777777777" //เบอร์
+            val number = "0866663967" //เบอร์ใส่ตรงนี้
             val call = Uri.parse("tel:" + number)
             val surf = Intent(Intent.ACTION_DIAL, call)
             startActivity(surf)
@@ -61,9 +72,9 @@ class RestaurantActivity : AppCompatActivity() {
 
     }
 
-    //for image slider
+    //สำหรับ image slider
     private fun init() {
-        //ไว้ add รูปเป็น array แบบ static เฉยๆ
+        //ไว้ add รูปจาก resImages เป็น array แบบ static เฉยๆ
         for (i in resImages.indices) {
             imgList.add(resImages[i])
         }
@@ -96,13 +107,54 @@ class RestaurantActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return super.onSupportNavigateUp()
     }
 
 
+
+    fun testComment(){
+        commentList.add(Comment(4.5f, "Delicious","Maxwell"))
+        commentList.add(Comment(3.0f, "Wait forever, cold foods, goodbye ja", "Steve"))
+
+        var adapter = CommentAdapter(this, commentList)
+        reviewList.adapter = adapter
+    }
+
+    inner class CommentAdapter: BaseAdapter {
+        var comList = ArrayList<Comment>()
+        var context: Context? = null
+        constructor(context: Context, listOfComment: ArrayList<Comment>):super() {
+            this.context = context
+            this.comList = listOfComment
+        }
+
+        //bind data to list view
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var currentCom = comList[position]
+            var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
+            var view = inflater.inflate(R.layout.cell_restaurant, null)
+            view.userName.text = currentCom.user
+            view.comment.text = currentCom.comment
+            view.resRating.rating = currentCom.rate!! //เอาค่ามาใส่ rating bar ต้องเป็น float เสมอ
+            return view
+
+        }
+
+        override fun getItem(position: Int): Any {
+            return comList[position]
+        }
+
+        override fun getItemId(position: Int): Long {
+            return 0
+        }
+
+        override fun getCount(): Int {
+            return comList.size
+        }
+    }
 
 
 }

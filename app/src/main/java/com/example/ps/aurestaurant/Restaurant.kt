@@ -8,16 +8,16 @@ class Restaurant {
     var type:String? = null
     var description:String? = null
     var tel:String? = null
-    var image: Int? = null
+    var images: Array<Int>? = null
     var location:Location? = null
 
 
-    constructor(name: String?, type: String?, description: String?, tel: String?, image: Int?, latitude: Double?, longitude:Double?) {
+    constructor(name: String?, type: String?, description: String?, tel: String?, images: Array<Int>?, latitude: Double?, longitude:Double?) {
         this.name = name
         this.type = type
         this.description = description
         this.tel = tel
-        this.image = image
+        this.images = images
         this.location = Location(name)
         this.location!!.latitude = latitude!!
         this.location!!.longitude = longitude!!

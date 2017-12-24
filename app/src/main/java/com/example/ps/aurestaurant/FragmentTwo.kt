@@ -59,8 +59,8 @@ class FragmentTwo : Fragment(), OnMapReadyCallback {
 
         for(i in 0..restaurantList.size-1) {
             var newRes = restaurantList[i]
-                var pokemonLocation = LatLng(newRes.location!!.latitude, newRes.location!!.longitude)
-                googleMap.addMarker(MarkerOptions().position(pokemonLocation).title(newRes.name).snippet(newRes.description))
+                var resLocation = LatLng(newRes.location!!.latitude, newRes.location!!.longitude)
+                googleMap.addMarker(MarkerOptions().position(resLocation).title(newRes.name).snippet(newRes.description))
         }
 
     }
@@ -68,8 +68,9 @@ class FragmentTwo : Fragment(), OnMapReadyCallback {
 
     var restaurantList = ArrayList<Restaurant>()
     fun testRestaurant(){
-        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "Thai","In the galaxy far far away...", "", R.drawable.noodle, 13.609934, 100.834303))
-        restaurantList.add(Restaurant("S&P", "Fusion", "Simply Delicious", "", R.drawable.sp ,13.612361, 100.837798))
+        restaurantList.add(Restaurant("ก๋วยเตี๋ยวเจ๊ปูจี๊ดจ๊าด", "Thai","In the galaxy far far away...", "021231234", arrayOf(R.drawable.noodle, R.drawable.noodle2), 13.609934, 100.834303))
+        restaurantList.add(Restaurant("S&P", "Fusion", "Simply Delicious, our slogan", "023536333", arrayOf(R.drawable.sp, R.drawable.sp2, R.drawable.sp3) ,13.612361, 100.837798))
+
     }
 
 
